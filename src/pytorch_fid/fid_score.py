@@ -122,7 +122,7 @@ def get_activations(files, model, batch_size=50, dims=2048, device='cpu',
 
     transforms = [TF.ToTensor()]
     if resize_to is not None:
-        transforms.append(TF.Resize(resize_to, interpolation=TF.InterpolationMode.LANCZOS))
+        transforms.append(TF.Resize(resize_to, interpolation=TF.InterpolationMode.BICUBIC))
         
     dataset = ImagePathDataset(files, transforms=TF.Compose(transforms))
     dataloader = torch.utils.data.DataLoader(dataset,
