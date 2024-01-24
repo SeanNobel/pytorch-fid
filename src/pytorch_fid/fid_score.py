@@ -69,6 +69,8 @@ parser.add_argument('--save-stats', action='store_true',
 parser.add_argument('path', type=str, nargs=2,
                     help=('Paths to the generated images or '
                           'to .npz statistic files'))
+parser.add_argument('--resize-to', type=int, default=None,
+                    help='Resize images to this size before calculating statistics')
 
 IMAGE_EXTENSIONS = {'bmp', 'jpg', 'jpeg', 'pgm', 'png', 'ppm',
                     'tif', 'tiff', 'webp'}
